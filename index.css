@@ -1,0 +1,67 @@
+/*
+縦書き
+https://www.webcreatorbox.com/tech/writing-mode
+https://qiita.com/RinoTsuka/items/3e3eaaba8cddb6ff08e9
+https://tategaki.github.io/explan1.html
+https://app.codegrid.net/entry/vertical-script-1
+https://tategaki.github.io/explan4.html
+http://tategaki.github.io/commentaries/2016/01/04/commentary-know-how.html
+*/
+html {
+  /* サイズ */
+  font-size: 18px;
+  line-height: 34px;
+  letter-spacing: 0.03em;
+
+  /* 縦書き。数字と日本語が対象。英字は横になってしまう。 */
+  -ms-writing-mode: tb-rl;
+  -moz-writing-mode: vertical-rl;
+  -o-writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+/* 英字の縦書き。縦中横と併用すると縦中横の字幅が小さくなってしまう。 */
+.orient {
+  -webkit-text-orientation: upright;
+  -moz-text-orientation: upright;
+  -ms-text-orientation: upright;
+  text-orientation: upright;
+}
+
+/* 縦中横。1文字幅で数字などを複数字入れる。 */
+.combine {
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+
+p {
+  text-indent: 1em;/* 1段落の先頭は1文字分だけ空白を入れる */
+  /*margin-left: 30px;*/
+  margin-left: 1.25em;
+}
+
+/* 下線を左でなく右に表示 */
+a {
+  /*text-decoration: overline;*/
+  text-decoration: none;
+  border-right: 1px dashed;
+  /*
+  padding-right: 3px;
+  */
+  text-underline-position:　right;
+}
+
+
+.vrl {
+  display: inline-block;
+  vertical-align: top;
+  border: 3px solid tomato;
+  padding: 10px;
+  margin: 0 0 30px;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+
